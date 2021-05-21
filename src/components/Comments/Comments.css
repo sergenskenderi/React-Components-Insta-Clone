@@ -25,3 +25,23 @@
   color: black;
   font-weight: bold;
 }
+
+.comment-add-form {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.comment-add-form input {
+  width: 80%;
+  font-size: 14px;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid #efefef;
+  color: #999;
+}
+
+.comment-add-form button {
+  padding: 12px;
+  border: none;
+  color: rgb(44, 36, 36);
+}

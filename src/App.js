@@ -64,12 +64,31 @@ const App = () => {
      setPosts(pst);
   };
 
+  const commentPost = (postId,comment) => {
+    const pst = posts.map( (post) => {
+      if(post.id === postId){
+       // const id = post.comments[post.comments.length()-1].id + 1;
+        const username = "sergenskenderi";
+        const id = post.comments[post.comments.length-1].id + 1;
+        const newComment = {
+          id : id ,
+          username : username ,
+          text : comment
+        }
+        post.comments.push(newComment);
+      }
+      return post;
+    })
+
+    setPosts(pst);
+  };
+
   return (
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       {/* Check the implementation of each component, to see what props they require, if any! */}
       <SearchBar handleChange={handleChange} search={search}/>
-      <Posts likePost={likePost} posts={posts} />
+      <Posts likePost={likePost} posts={posts} commentPost={commentPost}/>
     </div>
   );
 };
